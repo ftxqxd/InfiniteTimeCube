@@ -23,6 +23,21 @@ function add(v) {
     if (Math.random() > 0.8) {
         p.style.fontStyle = "italic";
     }
+
+    // Randomly add a horizontal rule made out of asterisks
+    if (Math.random() > 0.7) {
+        var fontSize = Math.round(Math.random()*28.5 + 7.5);
+        var chars = -1.9 * fontSize + 90;
+        var hr = document.createElement('p');
+        var text = document.createTextNode("*".repeat(chars));
+        hr.appendChild(text);
+        out.appendChild(hr);
+        hr.style.margin = "0px auto";
+        hr.style.fontSize = fontSize + "pt";
+        hr.style.padding = "15px 0px";
+    } else {
+        p.style.paddingBottom = "30px";
+    }
 }
 
 function readTextFile(file, callback) {
